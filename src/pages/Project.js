@@ -8,8 +8,8 @@ import  {ProjectList}  from '../Helper/ProjectList'
 function Project() {
   return (
     <div className='projects'>
-      <h1>Projects</h1>
-      <h6>My Personal Projects</h6>
+      <h2>Projects</h2>
+      <h4>My Personal Projects</h4>
       <div className="projectList">
         {ProjectList.map((project,inx)=>{
           return <Projectitem name ={project.name} image={project.image}id = {inx}/>

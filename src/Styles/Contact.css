@@ -82,7 +82,7 @@ padding: 0px 40px 40px 40px;
 .contactForm .inputBox input:valid ~ span,
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span{
-    color: #f86c6c;
+    color: #fbc534;
     font-size: 15px;
     transform: translateY(-25px);
 

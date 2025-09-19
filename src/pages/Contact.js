@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
 
-  const resumeUrl = 'https://drive.google.com/file/d/1HOuOUfVQqC0DaEpDZebhZHtLO6izo6tE/view?usp=drive_link';
+  const resumeUrl = 'https://drive.google.com/file/d/1k1-QLtvzodylf6IM_rcwlFpaJLcvPLcN/view?usp=sharing';
 
   // Event handler for the "Download CV" button
   const handleDownloadClick = () => {

@@ -1,58 +1,214 @@
-
+/* ProjectDisplay.css - Project Details Page Styles */
 .project {
-    width: 100%;
-    height: calc(100vh - 100px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: Poppins, sans-serif;
+  /* width: 100%; */
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #f0f0f0; /* match theme */
+}
+
+/* Back Button */
+.project-header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #121212;
+  color: #f0f0f0;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #fbc534;
+  color: #121212;
+  transform: translateY(-2px);
+}
+
+/* Content Stacked Vertically */
+.project-content {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Project Title */
+.project-content h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #121212;
+  margin-bottom: 10px;
+}
+
+/* Image Section */
+/* Image Section */
+.project img {
+  width: 100%;
+  max-height: 600px;   /* cap height */
+  object-fit: contain; /* prevent stretching */
+  border-radius: 20px; /* nicer look for app screenshots */
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project img:hover {
+  transform: scale(1.02);
+}
+
+/* If you want a scrollable container instead of shrinking */
+
+
+/* Links (Code + Live) */
+.project-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #121212;
+  color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: #fbc534;
+  color: #121212;
+  transform: translateY(-2px);
+}
+
+.project svg {
+  font-size: 18px;
+  color: inherit;
+}
+
+/* About Project */
+.project-description h3,
+.project-skills h3,
+.project-features h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #121212;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #fbc534;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.project-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  /* text-align: justify; */
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+.projectdetail{
+   display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.skill-tag {
+  background: #121212;
+  color: #f0f0f0;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: #fbc534;
+  color: #121212;
+}
+
+/* Features */
+.project-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding-left: 25px;
+  color: #333;
+}
+
+.project-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .project {
+    padding: 20px 15px;
   }
 
-  .project h1 {
-    margin-top: 50px;
-    color: #333333;
-    font-size: 35px;
-  }
-  .project img {
-    width: 700px;
-    border-radius: 10px;
-  }
-  
-  .project p {
-    font-size: 30px;
-    color: #333333;
-  }
-  
-  .project svg {
-    font-size: 40px;
-    color: #333333;
+  .project-content h1 {
+    font-size: 1.6rem;
   }
 
-
-
-  @media only screen and (max-width: 700px) {
-
-    .project{
-      width:100%;
-    }
-    .project h1 {
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-  .project p{
-    margin-top: 50px;
-    font-size: 20px;
+  .project-description h3,
+  .project-skills h3,
+  .project-features h3 {
+    font-size: 1.2rem;
   }
 
-  .project .skil{
-    width: 20%;
+  .project-description p {
+    font-size: 0.95rem;
   }
-  .project .pskill{
-    width: 80%;
+
+  .skill-tag {
+    font-size: 12px;
+    padding: 6px 12px;
   }
-  .project img {
-    width: 90%;
-    border-radius: 10px;
+
+  .project-link {
+    font-size: 13px;
+    padding: 8px 16px;
   }
-  }
+}

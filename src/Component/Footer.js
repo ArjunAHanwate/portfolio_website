@@ -18,7 +18,7 @@ function Footer() {
               
             
         </div>
-        <p style={{color:"#000", fontWeight:"500"}}> &copy; 2023 | All Rights Reserved.
+        <p style={{color:"#000", fontWeight:"500"}}> &copy; 2025 | All Rights Reserved.
  </p>
       
     </div>
