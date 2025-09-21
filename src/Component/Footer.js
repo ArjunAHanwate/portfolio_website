@@ -14,13 +14,8 @@ function Footer() {
           <a href={linkedIn} target="_blank" rel="noopener noreferrer"><LinkedInIcon/></a>
           <a href={instagram} target="_blank" rel="noopener noreferrer"> <InstagramIcon/></a>
           <a href={facebook} target="_blank" rel="noopener noreferrer"><FacebookIcon/></a>
-           
-              
-            
         </div>
-        <p style={{color:"#000", fontWeight:"500"}}> &copy; 2025 | All Rights Reserved.
- </p>
-      
+        <p>&copy; 2025 | All Rights Reserved.</p>
     </div>
   )
 }

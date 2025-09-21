@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ProjectList } from "../Helper/ProjectList"
+import { ProjectList } from "../Helper/ProjectList";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import LaunchIcon from "@material-ui/icons/Launch";
-import "../Styles/ProjectDisplay.css"
+import "../Styles/ProjectDisplay.css";
 
 function ProjectDisplay() {
   const { id } = useParams();
@@ -14,6 +14,11 @@ function ProjectDisplay() {
   if (!project) {
     return (
       <div className="project">
+        <div className="project-background">
+          <div className="project-orb project-orb-1"></div>
+          <div className="project-orb project-orb-2"></div>
+        </div>
+        
         <div className="project-header">
           <button 
             className="back-button" 
@@ -23,7 +28,10 @@ function ProjectDisplay() {
             Back to Projects
           </button>
         </div>
-        <h1>Project not found</h1>
+        
+        <div className="project-content">
+          <h1>Project not found</h1>
+        </div>
       </div>
     );
   }
@@ -32,8 +40,19 @@ function ProjectDisplay() {
 
   return (
     <div className="project">
+      <div className="project-background">
+        <div className="project-orb project-orb-1"></div>
+        <div className="project-orb project-orb-2"></div>
+      </div>
+      
       <div className="project-header">
-
+        <button 
+          className="back-button" 
+          onClick={() => navigate(-1)}
+        >
+          <ArrowBackIcon />
+          Back to Projects
+        </button>
       </div>
 
       <div className="project-content">
@@ -68,13 +87,11 @@ function ProjectDisplay() {
         <div className="project-info">
           <div className="project-description">
             <h3>About this project</h3>
-            <div  className="projectdetail">
             <p>
               {project.description || 
                 `${project.name} is a comprehensive web application that demonstrates modern development practices and cutting-edge technologies. This project showcases full-stack development capabilities with a focus on user experience, performance optimization, and scalable architecture. Built with attention to detail and following industry best practices.`
               }
             </p>
-            </div>
           </div>
 
           {skillsArray.length > 0 && (

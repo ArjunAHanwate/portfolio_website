@@ -61,7 +61,7 @@ function App() {
         <Route path='/academic' element = {<Academic/>}/>
         <Route path='/contact' element = {<Contact/>}/>
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
      </Router>
     </div>
   );

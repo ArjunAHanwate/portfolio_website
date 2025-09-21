@@ -1,47 +1,53 @@
 .navbar {
   width: 100%;
   height: 80px;
-  background: #333333;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .links {
   width: 100%;
   height: 100%;
-  /* margin-top: 10px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
-.first{
-  /* display: inline-block; */
+
+.first {
   position: relative;
-  
+  color: white;
+  text-decoration: none;
+  margin: 0 40px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
+
 .first::after {
   content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   background-color: #fbc534;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
 
+.first:hover {
+  color: #fbc534;
+}
+
 .first:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin-top: 20px;
-  margin: 40px;
-  /* padding: 20px; */
-  font-size: 25px;
 }
 
 .toggleButton {
@@ -53,20 +59,27 @@
 }
 
 .toggleButton svg {
-  font-size: 50px;
+  font-size: 30px;
+  color: white;
 }
+
 .toggleButton button {
   margin-right: 20px;
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #open {
   height: 100vh;
-  overflow-y: auto;
-  
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.98), rgba(42, 82, 152, 0.98));
+  backdrop-filter: blur(15px);
 }
 
 #open .links {
@@ -78,59 +91,57 @@
 #open a {
   width: 100%;
   text-align: center;
+  padding: 20px 0;
+  margin: 10px 0;
+  font-size: 24px;
 }
 
 @media only screen and (max-width: 900px) {
   .navbar a {
-    width: 70%;
-
+    margin: 20px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-
-  .navbar{
-    height: 60px;
+  .navbar {
+    height: 70px;
   }
+  
   .toggleButton {
     display: flex;
-    
   }
-
-  .toggleButton svg{
-    padding-bottom: 38px;
+  
+  .toggleButton svg {
+    padding-bottom: 0;
   }
+  
   #close a {
     display: none;
   }
 }
 
 @media only screen and (min-width: 600px) {
-
-  
   .toggleButton {
     display: none;
   }
-
-  .hiddenLinks {
-    display: none;
-  }
-
+  
   #open {
-    height: 100px;
-    
+    height: 80px;
   }
-
+  
   #open .links {
     flex-direction: row;
   }
-
- 
 }
 
-@media screen and (min-width: 600px) and (max-width: 900px){
-  #contact{
-    margin-left: 40px;
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  #contact {
+    margin-left: 20px;
+  }
+  
+  .first {
+    margin: 0 20px;
+    font-size: 16px;
   }
 }
-
