@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { 
   SiJavascript, SiCplusplus, SiHtml5, SiCss3, SiTailwindcss, SiReact, 
@@ -8,13 +10,14 @@ import {
 import { FaTools, FaServer, FaJava, FaLinkedin, FaEnvelope, FaGithub, FaWhatsapp, FaMapMarkerAlt, FaDownload } from "react-icons/fa";
 import '../Styles/Home.css';
 import { ProjectList } from '../Helper/ProjectList';// Import your project images
-
+import PP from '../assets/pp.jpeg'
 function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSkill, setActiveSkill] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const containerRef = useRef(null);
+    const navigate = useNavigate();
   
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -100]);
@@ -188,9 +191,10 @@ function Home() {
               <div className="profile-ring ring-1"></div>
               <div className="profile-ring ring-2"></div>
               <div className="profile-ring ring-3"></div>
-              <div className="profile-image">
-                <div className="profile-placeholder">👨‍💻</div>
-              </div>
+       <div className="profile-image">
+  <img src={PP} alt="Profile" className="profile-photo" />
+</div>
+
               {/* Floating Tech Icons */}
               <div className="floating-tech tech-1"><SiReact /></div>
               <div className="floating-tech tech-2"><SiNodedotjs /></div>
@@ -293,6 +297,8 @@ function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ scale: 1.05, y: -10 }}
+                            onClick={() => navigate(`/project/${index}`)}
+
             >
               <div className="project-image">
                 <img src={project.image} alt={project.name} />
@@ -338,9 +344,9 @@ function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="timeline-icon">
+              {/* <div className="timeline-icon">
                 {exp.type === 'work' ? '💼' : '🎓'}
-              </div>
+              </div> */}
               <div className="timeline-content">
                 <h3>{exp.title}</h3>
                 <h4>{exp.company}</h4>

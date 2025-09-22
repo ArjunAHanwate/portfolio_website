@@ -153,15 +153,26 @@ body {
 }
 
 .hero-text {
-  color: white;
-}
+  display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+          color: white;}
 
 .hero-text h1 {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  white-space: nowrap; /* prevents wrapping */
 }
+
+.hero-text h1 span {
+  display: inline; /* ensures inline flow */
+  margin-right: 0.5rem; /* optional spacing */
+}
+
 
 .hero-name {
   display: block;
@@ -205,6 +216,7 @@ body {
 .hero-social {
   display: flex;
   gap: 1rem;
+  
 }
 
 .hero-social a {
@@ -230,7 +242,45 @@ body {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 30px rgba(251, 197, 52, 0.4);
 }
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
 
+/* Optional: If you want to ensure the container maintains circular shape */
+.profile-image {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(251, 197, 52, 0.1), rgba(147, 51, 234, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  transition: transform 0.3s ease;
+  overflow: hidden; /* This ensures the image stays within the circular boundary */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 220px;
+    height: 220px;
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+}
 /* Profile Container */
 .profile-container {
   position: relative;
@@ -664,7 +714,7 @@ body {
 }
 
 .timeline-icon {
-  width: 60px;
+  width: 120px;
   height: 60px;
   background: rgba(251, 197, 52, 0.2);
   border: 3px solid #fbbf24;
@@ -726,7 +776,7 @@ body {
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: start;
@@ -736,6 +786,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 350px;
 }
 
 .contact-item {
